@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GervaisNoahTech | Home of Electronics</title>
+    <style>
+        /* Netflix Style Design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #141414;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(0, 0, 0, 0.85);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #E50914;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #e5e5e5;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #E50914;
+        }
+
+        /* Hero Banner (Netflix Style) */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(to top, #141414, rgba(0,0,0,0.2)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 5%;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .hero-btn {
+            background-color: #E50914;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            width: fit-content;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background-color: #b80710;
+        }
+
+        /* Netflix Rows Rows Section */
+        .section-container {
+            padding: 40px 5%;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .movie-row {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+        }
+
+        .movie-row::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .movie-row::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        .card {
+            min-width: 250px;
+            max-width: 250px;
+            background-color: #181818;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .badge {
+            background-color: #E50914;
+            color: white;
+            padding: 2px 6px;
+            font-size: 12px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .badge-repair {
+            background-color: #0080ff;
+        }
+
+        .price {
+            display: block;
+            margin-top: 10px;
+            font-size: 15px;
+            color: #46d369;
+            font-weight: bold;
+        }
+
+        /* Communication & Contact Section */
+        .contact-section {
+            background-color: #181818;
+            padding: 50px 5%;
+            margin-top: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background-color: #333;
+            border: none;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: #E50914;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .chat-quick {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .chat-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            width: fit-content;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #555;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">GervaisNoahTech</div>
+        <nav>
+            <a href="#">Ahabanza</a>
+            <a href="#ibigurishwa">Ibigurishwa</a>
+            <a href="#ibikorwa">Ibyo Dukora</a>
+            <a href="#tuvugishe">Tuvugishe</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Ibikoresho bya Electronic byose birakorwa</h1>
+        <p>Turi inzobere mu gukora ibikoresho byose bya electronic byangiritse. Kandi na bike mu byiza twatoranyije urabyigurira hano ku giciro cyiza.</p>
+        <a href="#tuvugishe" class="hero-btn">Zana Igikoresho Cyangiritse</a>
+    </section>
+
+    <!-- ROW 1: IBYIBIKORESHO BIGURISHWA (For Sale) -->
+    <section class="section-container" id="ibigurishwa">
+        <div class="section-title">Ibikoresho Bigurishwa Hano <span class="badge">KUGURA</span></div>
+        <div class="movie-row">
+            
+            <div class="card">
+                <img src="https://unsplash.com" alt="Laptop">
+                <div class="card-info">
+                    <div class="card-title">HP Pavilion Laptop</div>
+                    <span class="badge">Gishya</span>
+                    <span class="price">Frw 450,000</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://unsplash.com" alt="Smartphone">
+                <div class="card-info">
+                    <div class="card-title">Samsung Galaxy A54</div>
+                    <span class="badge">Gishya</span>
+                    <span class="price">Frw 320,000</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://unsplash.com" alt="Smart TV">
+                <div class="card-info">
+                    <div class="card-title">Sony Smart TV 43"</div>
+                    <span class="badge">Gishya</span>
+                    <span class="price">Frw 380,000</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://unsplash.com" alt="Headphones">
+                <div class="card-info">
+                    <div class="card-title">Wireless Headphones</div>
+                    <span class="badge">Gishya</span>
+                    <span class="price">Frw 45,000</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ROW 2: IBYO DUKORA ARIKO UTABIGURA HANO (Repairs/Services Only) -->
+    <section class="section-container" id="ibikorwa">
+        <div class="section-title">Ibikoresho Byose Turabikora (Service & Maintenance) <span class="badge badge-repair">REPAIR</span></div>
+        <div class="movie-row">
+            
+            <div class="card">
+                <img src="https://unsplash.com" alt="Fridge">
+                <div class="card-info">
+                    <div class="card-title">Frigo / Ibyuma Bikandisha</div>
+                    <span class="badge badge-repair">Gukora gusa</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://unsplash.com" alt="Washing Machine">
+                <div class="card-info">
+                    <div class="card-title">Imashini Zimesa</div>
+                    <span class="badge badge-repair">Gukora gusa</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://unsplash.com" alt="Microwave">
+                <div class="card-info">
+                    <div class="card-title">Imigati n'Ibyuma bishyushya</div>
